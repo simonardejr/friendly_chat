@@ -10,7 +10,7 @@ void main() {
 
 final ThemeData kIOSTheme = ThemeData(
   primarySwatch: Colors.red,
-  primaryColor: Colors.grey[100],
+  primaryColor: Colors.grey,
   primaryColorBrightness: Brightness.light,
 );
 
@@ -19,7 +19,7 @@ final ThemeData kDefaultTheme = ThemeData(
   accentColor: Colors.green,
 );
 
-String _name = 'Your Name';
+String _name = 'Simonarde Lima';
 
 class FriendlyChatApp extends StatelessWidget {
   const FriendlyChatApp({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class FriendlyChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FriendlyChat',
+      title: 'Friendly Chat',
       theme: defaultTargetPlatform == TargetPlatform.iOS
           ? kIOSTheme
           : kDefaultTheme,
@@ -54,7 +54,7 @@ class ChatMessage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: const EdgeInsets.only(right: 16.0),
+              margin: const EdgeInsets.only(right: 10.0),
               child: CircleAvatar(child: Text(_name[0])),
             ),
             Expanded(
@@ -91,7 +91,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FriendlyChat'),
+        title: Text('Friendly Chat'),
         elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
       ),
       body: Container(
@@ -173,7 +173,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     var message = ChatMessage(
       text: text,
       animationController: AnimationController(
-        duration: const Duration(milliseconds: 700),
+        duration: const Duration(milliseconds: 200),
         vsync: this,
       ),
     );
